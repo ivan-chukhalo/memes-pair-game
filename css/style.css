@@ -1,74 +1,95 @@
 *,
 *::before,
-*::after{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Exo", sans-serif;
+  font-weight: 700;
 }
 
-body{
-    background-color: #dca1d8;
-    height: 100vh;
+body {
+  height: 100vh;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 100vh;
 }
 
-.header{
-    text-align: center;
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-.game{
-    display: flex;
-    margin: 0 auto;
-    width: 640px;
-    height: 640px;
-    flex-wrap: wrap;  
-    perspective: 1000px;
+.header {
+  text-align: center;
+  font-size: 40px;
+  transform: skew(-15deg);
+  letter-spacing: 0.03em;
+  color: #fff;
 }
 
-.card{
-    margin: 5px;
-    width: calc(25% - 10px);
-    height: calc(33.33% - 10px);
-    position: relative; 
-    transform: scale(1);
-    transform-style: preserve-3d;
-    transition: transform 0.5s;
-    box-shadow: 1px 1px 1px rgba(0,0,0,0.3);    
+.game {
+  display: flex;
+  margin: 0 auto;
+  width: 640px;
+  height: 640px;
+  flex-wrap: wrap;
+  perspective: 1000px;
 }
 
-.card:active{
-    transform: scale(0.9);
-    transition: transform 0.2s;
+.card {
+  margin: 5px;
+  width: calc(25% - 10px);
+  height: calc(33.33% - 10px);
+  position: relative;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.card:active {
+  transform: scale(0.9);
+  transition: transform 0.2s;
 }
 
 .front-face,
-.back-face{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    padding: 3px;
-    background-color: #1c7ccc;
-    border-radius: 5px;
-    backface-visibility: hidden;
+.back-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 3px;
+  border-radius: 5px;
+  backface-visibility: hidden;
+  border-radius: 5%;
+  object-fit: cover;
 }
 
-.flip{
-    transform: rotateY(180deg);
+.flip {
+  transform: rotateY(180deg);
 }
 
-.front-face{
-    transform: rotateY(180deg);
+.front-face {
+  transform: rotateY(180deg);
 }
 
-@media (max-width: 768px){
-    .game{
-        width: 425px;
-        height: 425px;
-    }
+@media (max-width: 768px) {
+  .game {
+    width: 425px;
+    height: 425px;
+  }
 }
 
-@media (max-width: 425px){
-    .game{
-        width: 320px;
-        height: 320px;
-    }
+@media (max-width: 425px) {
+  .game {
+    width: 320px;
+    height: 320px;
+  }
 }
