@@ -1,3 +1,5 @@
+const jsConfetti = new JSConfetti()
+
 const cards = document.querySelectorAll(".card");
 
 function shuffleCards() {
@@ -62,6 +64,7 @@ function resetBoard() {
 }
 
 function restartGame() {
+  jsConfetti.addConfetti();
   shuffleCards();
   resetBoard();
   shuffleCards();
