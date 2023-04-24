@@ -31,7 +31,7 @@ body {
 .header {
   text-align: center;
   font-size: 40px;
-  transform: skew(-15deg);
+  font-style: italic;
   letter-spacing: 0.03em;
   color: #fff;
 }
